@@ -1,0 +1,208 @@
+header {
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+label {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 5px;
+    position: static;
+    text-align: left;
+    width: 90%;
+}
+input {
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: 2px dashed white;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+footer p {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+/*accueil et inscription*/
+#a{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#a1 img{
+    width: 40%;
+    margin-top: 10%;
+}
+#a2 button{
+    margin-top: 12px;
+    font-size: x-large;
+    font-weight: bold;
+}
+#a2 p{
+    color: white;
+}
+.a3 {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.a3 h2 {
+    color: white;
+    font-size: 1.2em;
+}
+li a{
+    position: absolute;
+    right: 47.5%;
+    text-decoration: none;
+    color: white;
+}
+/*jeu*/
+#b{
+    display: inline-flex;
+    margin-bottom: 5%;
+}
+#b1 b{
+    margin-right: 2px;
+    color: white;
+    position: absolute;
+    left: 2%;
+}
+#b2{
+    color: white;
+    display: flex;
+    position: absolute;
+    left: 45%;
+}
+#b3 img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 95%;
+    top: 1%;
+}
+section{
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+div{
+    width: 100%;
+    text-align: center;
+}
+table{
+    border: 2px solid white;
+    margin-bottom: 100px;
+}
+#b4 {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 60%;     
+  }
+/*admin*/
+#add{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.box {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid white;
+}
+.form-box label{
+    color: white;
+    text-align: right;
+}
+.form-box input{
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.table-box table{
+    width: 100%;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+tr,th,td{
+    color: white;
+}
+/*score*/
+#s{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.score-container {
+    background: black;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+  }
+
+  .score-container h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .score {
+    font-size: 48px;
+    color: white;
+    margin: 20px 0;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
