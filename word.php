@@ -1,27 +1,29 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$db = 'projet';
 
-$word = $_POST['word'];
+$host='localhost';
+$username='root';
+$password='';
+$db='projet';
 
-    $conn = new mysqli($host, $username, $password, $db);
-    if ($conn->connect_error) {
-        die("Connexion échouée : " . $conn->connect_error);
-    }
+$conn = new mysqli($host, $username, $password,$db);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-    $stmt = $conn->prepare("INSERT INTO mots(mot) VALUES (?)");
+if(isset($_POST['word'])){
+    $word = $_POST['word'];
+    $stmt = $conn->prepare("INSERT INTO mots (mot) VALUES (?)");
     $stmt->bind_param("s", $word);
 
-    if ($stmt->execute()) {
-        echo "Mot ajouté avec succès.";
-    } else {
-        echo "Erreur : " . $stmt->error;
-    }
 
-    $stmt->close();
-    $conn->close();
-?>
+   if ($stmt->execute()) {
+       echo "insertion succesful";
+   } else {
+       echo "Error insertion table: " . $conn->error;
+   }
+   $stmt->close();
+   $conn->close();  
+}
+
+
+?>         
