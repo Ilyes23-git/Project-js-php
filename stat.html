@@ -9,7 +9,7 @@
 
   <div class="score-container">
     <h1>Votre Score</h1>
-    <div class="score"></div>
+    <div class="score" id="score1"></div>
     <div class="btns">
       <button onclick="move()">Replay</button>
       <button onclick="move2()">Quitter</button>
@@ -19,6 +19,20 @@
   <footer>
     <p>© 2025 MyGamingSite - All rights reserved</p>
   </footer>
-  <script src="instruct.js"></script>
+  <script>
+    function move() {
+  window.location.href = "scrabble.php";
+}
+
+function move2(){
+  window.location.href = "Authentification.html"
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const score = localStorage.getItem("monScore")
+    if (score !== null) {
+      document.getElementById("score1").textContent = score
+    }
+  });
+  </script>
 </body>
 </html>
