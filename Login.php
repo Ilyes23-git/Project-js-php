@@ -8,7 +8,7 @@ $db_name = "projet";
 
 $conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
 if (!$conn) {
-    die("Échec de la connexion : " . mysqli_connect_error());
+    die("Connection failed : " . mysqli_connect_error());
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user']) && isset($_POST['pass'])) {
@@ -35,13 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user']) && isset($_PO
             exit;
         } 
         else {
-            echo "Mot de passe incorrect.";
+            echo "Incorrect password.";
         }
     }
         
 
     } else {
-        echo "Utilisateur introuvable.";
+        echo "User not found.";
     }
 
     $stmt->close();

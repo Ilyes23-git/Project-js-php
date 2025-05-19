@@ -8,10 +8,10 @@ $db_name = "projet";
 $conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
 
 if (!$conn) {
-    die("Échec de la connexion : " . mysqli_connect_error());
+    die("Connection failed : " . mysqli_connect_error());
 }
 
-echo "Connexion réussie avec MySQLi."; 
+echo "Successful connection with Mysql."; 
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mail'])&& isset($_POST['username'])&& isset($_POST['password'])) {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mail'])&& isset($_POS
 
         $stmt->close();
 } else {
-    echo "⚠️ Aucune donnée reçue.";
+    echo "⚠️ No data received.";
 }
 
 $conn->close();
