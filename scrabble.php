@@ -71,14 +71,14 @@
         const message = document.getElementById("message");
 
         if (saisie === motCorrect) {
-            message.textContent = "✅ Bonne réponse !";
+            message.textContent = " Bonne réponse !";
             message.style.color = "lightgreen";
             score += motCorrect.length;
             document.getElementById("score").textContent = score;
             localStorage.setItem("monScore", score);
             next();
         } else {
-            message.textContent = "❌ Mauvaise réponse.";
+            message.textContent = " Mauvaise réponse.";
             message.style.color = "red";
         }
     }
