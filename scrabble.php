@@ -78,7 +78,7 @@
             localStorage.setItem("monScore", score);
             next();
         } else {
-            message.textContent = " Mauvaise réponse.";
+            message.textContent = "Mauvaise réponse.";
             message.style.color = "red";
         }
     }
