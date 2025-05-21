@@ -85,31 +85,22 @@ li a{
     color: white;
 }
 /*jeu*/
-#b{
-    display: inline-flex;
-    margin-bottom: 5%;
+
+#b1 {
+  width: auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: aliceblue;
+  margin-top: 40px;
 }
-#b1 b{
-    margin-right: 2px;
+#b2 {
     color: white;
-    position: absolute;
-    left: 2%;
-}
-#b2{
-    color: white;
+    width: 4%;
     display: flex;
+    align-items: center;
+    font-size: 18px;
     position: absolute;
     left: 45%;
-}
-#b3{
-    position: absolute;
-    left: 45%;
-    top: 1%;
-}
-#b3 img{
-    width: 50px;
-    height: 50px;
-    
 }
 section{
     margin-top: 12px;
@@ -119,7 +110,7 @@ section{
     align-items: center;
 }
 div{
-    width: 100%;
+    width: 60%;
     text-align: center;
 }
 table{
