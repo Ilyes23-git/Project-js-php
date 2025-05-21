@@ -11,39 +11,47 @@ if (!$conn) {
     die("Échec de la connexion : " . mysqli_connect_error());
 }
 
+$stmt = null;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user']) && isset($_POST['pass'])) {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
+    // Cas admin direct
     if ($user === "admin" && $pass === "0000") {
-            $_SESSION['username'] = "admin";
-            echo "<script>window.location.href = 'admin.html'</script>";
-            exit;
-        } 
+        $_SESSION['username'] = "admin";
+        echo "<script>window.location.href = 'admin.html'</script>";
+        exit;
+    } 
 
+    // Préparation de la requête
     $stmt = $conn->prepare("SELECT username, pass FROM auth WHERE username = ?");
-    $stmt->bind_param("s", $user);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    if ($stmt) {
+        $stmt->bind_param("s", $user);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    if ($result && $result->num_rows === 1) {
-       $row = $result->fetch_assoc();
-        
-        if ($pass === $row['pass']) {
-            $_SESSION['username'] = $row['username'];
-            echo "<script>window.location.href = 'Accueil.html'</script>";
-            exit;
-        } 
-        else {
-            echo "Mot de passe incorrect.";
+        if ($result && $result->num_rows === 1) {
+            $row = $result->fetch_assoc();
+            if ($pass === $row['pass']) {
+                $_SESSION['username'] = $row['username'];
+                echo "<script>window.location.href = 'Accueil.html'</script>";
+                exit;
+            } else {
+                echo "Mot de passe incorrect.";
+            }
+        } else {
+            echo "Utilisateur introuvable.";
         }
-    }
-        
-
     } else {
-        echo "Utilisateur introuvable.";
+        echo "Erreur lors de la préparation de la requête.";
     }
+} else {
+    echo "Veuillez remplir tous les champs.";
+}
 
+if ($stmt) {
     $stmt->close();
-    $conn->close();
+}
+$conn->close();
 ?>
