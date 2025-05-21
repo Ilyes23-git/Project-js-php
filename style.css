@@ -86,21 +86,30 @@ li a{
 }
 /*jeu*/
 
+#b {
+  position: relative;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+/* Temps centré */
 #b1 {
-  width: auto;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: aliceblue;
-  margin-top: 40px;
 }
+
+/* Score à gauche, positionné en absolu */
 #b2 {
-    color: white;
-    width: 4%;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    position: absolute;
-    left: 45%;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  gap: 5px;
 }
 section{
     margin-top: 12px;
@@ -108,6 +117,7 @@ section{
     flex-direction: column;
     gap: 80px;
     align-items: center;
+    text-align: center;
 }
 table{
     border: 2px solid white;
@@ -181,6 +191,7 @@ table{
   .btns {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
     margin-top: 30px;
     justify-content: center;
   }
