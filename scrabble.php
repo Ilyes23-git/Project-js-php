@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrabble</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=123">
 </head>
 <body>
     <header id="b">
@@ -67,8 +67,8 @@
     }
 
     function verifierMot() {
-        const saisie = document.getElementById("b6").value.trim().toLowerCase();
-        const message = document.getElementById("message");
+        let saisie = document.getElementById("b6").value.trim().toLowerCase();
+        let message = document.getElementById("message");
 
         if (saisie === motCorrect) {
             message.textContent = " Bonne réponse !"
@@ -76,13 +76,14 @@
             message.style.backgroundColor = "green";
             score += motCorrect.length;
             document.getElementById("score").textContent = score;
-            localStorage.setItem("monScore", score);
+            
             next();
         } else {
             message.textContent = "Mauvaise réponse.";
             message.style.color = "red"
-           message.style.backgroundColor = "darkred";
+            message.style.backgroundColor = "darkred";
         }
+        localStorage.setItem("monScore", score);
     }
 
     start();
