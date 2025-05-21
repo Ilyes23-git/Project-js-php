@@ -16,7 +16,7 @@
         </div>
     </header>
 
-    <section>
+    <section id="b3">
             <div>
                 <div id="b5" style="color: aliceblue"><?php echo $melange; ?></div>
                 <p id="message" style="color: aliceblue"></p>

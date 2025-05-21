@@ -50,10 +50,9 @@ footer p {
 #a{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    text-align: center;
 }
 #a1 img{
-    width: 40%;
     margin-top: 10%;
 }
 #a2 button{
@@ -93,14 +92,12 @@ li a{
   margin-bottom: 50px;
 }
 
-/* Temps centré */
 #b1 {
   font-size: 32px;
   font-weight: bold;
   color: aliceblue;
 }
 
-/* Score à gauche, positionné en absolu */
 #b2 {
   position: absolute;
   top: 0;
@@ -111,7 +108,7 @@ li a{
   display: flex;
   gap: 5px;
 }
-section{
+#b3{
     margin-top: 12px;
     display: flex;
     flex-direction: column;
