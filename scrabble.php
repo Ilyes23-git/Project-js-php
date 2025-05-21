@@ -11,8 +11,8 @@
     <header id="b">
         <div id="b1" style="color: aliceblue">60</div>
         <div id="b2">
-            <b>score:</b>
-            <b id="score">0</b>
+            <b style="color: aliceblue">score:</b>
+            <b id="score" style="color: aliceblue">0</b>
         </div>
     </header>
 
@@ -71,15 +71,17 @@
         const message = document.getElementById("message");
 
         if (saisie === motCorrect) {
-            message.textContent = " Bonne réponse !";
-            message.style.color = "lightgreen";
+            message.textContent = " Bonne réponse !"
+            message.style.color = "lightgreen"
+            message.style.backgroundColor = "green";
             score += motCorrect.length;
             document.getElementById("score").textContent = score;
             localStorage.setItem("monScore", score);
             next();
         } else {
             message.textContent = "Mauvaise réponse.";
-            message.style.color = "red";
+            message.style.color = "red"
+           message.style.backgroundColor = "darkred";
         }
     }
 
