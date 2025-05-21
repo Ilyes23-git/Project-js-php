@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Score</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=123">
+
 </head>
 <body id="s">
 
@@ -21,18 +22,17 @@
   </footer>
   <script>
     function move() {
-  window.location.href = "scrabble.php";
-}
-
-function move2(){
-  window.location.href = "Authentification.html"
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const score = localStorage.getItem("monScore")
-    if (score !== null) {
-      document.getElementById("score1").textContent = score
+      window.location.href = "scrabble.php";
+      localStorage.clear();
     }
-  });
+
+    function move2(){
+      window.location.href = "Authentification.html"
+      localStorage.clear();
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      let score = localStorage.getItem("monScore")
+      document.getElementById("score1").textContent = score !== null ? score : 0; });
   </script>
 </body>
 </html>
