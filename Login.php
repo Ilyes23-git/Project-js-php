@@ -8,7 +8,7 @@ $db_name = "projet";
 
 $conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
 if (!$conn) {
-    die("Échec de la connexion : " . mysqli_connect_error());
+    die("Connection failed : " . mysqli_connect_error());
 }
 
 $stmt = null;
@@ -31,24 +31,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user']) && isset($_PO
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if ($result && $result->num_rows === 1) {
-            $row = $result->fetch_assoc();
-            if ($pass === $row['pass']) {
-                $_SESSION['username'] = $row['username'];
-                echo "<script>window.location.href = 'Accueil.html'</script>";
-                exit;
-            } else {
-                echo "Mot de passe incorrect.";
-            }
-        } else {
-            echo "Utilisateur introuvable.";
+    if ($result && $result->num_rows === 1) {
+       $row = $result->fetch_assoc();
+        
+        if ($pass === $row['pass']) {
+            $_SESSION['username'] = $row['username'];
+            echo "<script>window.location.href = 'Accueil.html'</script>";
+            exit;
+        } 
+        else {
+            echo "Mot de passe incorrect.";
         }
     } else {
-        echo "Erreur lors de la préparation de la requête.";
+        echo "Utilisateur introuvable.";
     }
-} else {
-    echo "Veuillez remplir tous les champs.";
-}
 
 if ($stmt) {
     $stmt->close();

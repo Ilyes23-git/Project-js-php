@@ -9,7 +9,7 @@ $db_name = "projet";
 $conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
 
 if (!$conn) {
-    die("Erreur de connexion");
+    die("Connection failed");
 }
 
 $sql = "SELECT mot FROM mots ORDER BY RAND()";
@@ -27,3 +27,4 @@ echo json_encode([
 ]);
 
 mysqli_close($conn);
+?>

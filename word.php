@@ -17,7 +17,7 @@ if(isset($_POST['word'])){
 
 
    if ($stmt->execute()) {
-       echo "insertion succesful";
+       echo "insertion successful";
    } else {
        echo "Error insertion table: " . $conn->error;
    }
