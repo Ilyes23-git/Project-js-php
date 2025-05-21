@@ -24,7 +24,6 @@ $_SESSION['mot_original'] = $mot;
 echo json_encode([
     "mot" => $mot,
     "melange" => $melange,
-    "score" => $_SESSION['score']
 ]);
 
 mysqli_close($conn);
