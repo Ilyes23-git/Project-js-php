@@ -12,7 +12,7 @@
         <div id="b1" style="color: aliceblue">60</div>
         <div id="b2">
             <b style="color: aliceblue">score:</b>
-            <b id="score" >0</b>
+            <b id="score" style="color: aliceblue">0</b>
         </div>
     </header>
 
