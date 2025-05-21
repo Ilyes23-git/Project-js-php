@@ -149,7 +149,8 @@ table{
 }
 .form-box label{
     color: white;
-    text-align: right;
+    position: relative;
+    left: auto;
 }
 .form-box input{
     width: 100%;
