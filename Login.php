@@ -1,16 +1,6 @@
 <?php
 session_start();
-
-$serveur = "localhost";
-$utilisateur = "root";
-$password = "";
-$db_name = "projet";
-
-$conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
-if (!$conn) {
-    die("Connection failed : " . mysqli_connect_error());
-}
-
+require "conn.php";
 $stmt = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user']) && isset($_POST['pass'])) {

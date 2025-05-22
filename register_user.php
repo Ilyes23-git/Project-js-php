@@ -1,11 +1,5 @@
 <?php
-$serveur = "localhost";
-$utilisateur = "root";
-$password = "";
-$db_name = "projet";
-
-
-$conn = mysqli_connect($serveur, $utilisateur, $password, $db_name);
+require "conn.php";
 
 if (!$conn) {
     die("Connection failed : " . mysqli_connect_error());
