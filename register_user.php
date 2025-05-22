@@ -1,13 +1,6 @@
 <?php
 require "conn.php";
 
-if (!$conn) {
-    die("Connection failed : " . mysqli_connect_error());
-}
-
-echo "Successful connection with Mysql."; 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mail'])&& isset($_POST['username'])&& isset($_POST['password'])) {
     $mail = $_POST['mail']; 
     $username = $_POST['username']; 
