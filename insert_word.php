@@ -1,10 +1,5 @@
 <?php
 require "conn.php";
-if (!$conn) {
-    die("Connection failed : " . mysqli_connect_error());
-}
-
-echo "Successful connection with Mysql."; 
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['word'])) {
